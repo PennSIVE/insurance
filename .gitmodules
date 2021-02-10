@@ -1,0 +1,4 @@
+[submodule "nifti"]
+	path = nifti
+	url = ./nifti
+	datalad-id = 912502c2-6c30-4a27-a4bc-3123e4fb9b4f
