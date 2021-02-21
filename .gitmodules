@@ -2,3 +2,7 @@
 	path = nifti
 	url = ./nifti
 	datalad-id = 912502c2-6c30-4a27-a4bc-3123e4fb9b4f
+[submodule "simg"]
+	path = simg
+	url = ./simg
+	datalad-id = 5618cd52-240b-4e8b-a422-b371e7542c2b
