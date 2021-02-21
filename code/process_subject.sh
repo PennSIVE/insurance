@@ -71,7 +71,7 @@ for t1 in $(find nifti/sub-$sub -name '*T1w.nii.gz'); do
     jlf=$outdir/${image_label}_jlf/thalamus/jlf_thalamus.nii.gz
     if [ ! -e $jlf ]; then
         mkdir -p ${outdir}/${image_label}_jlf/{oasis_to_t1,oasis_thalamus_to_t1,thalamus} # make dir for tmp files
-        for i in (seq 1 10); do
+        for i in $(seq 1 10); do
             SINGULARITYENV_INDEX=$i singularity run --cleanenv -B $TMPDIR \
             -B ${stripped}:/N4_T1_strip.nii.gz:ro \
             -B ${outdir}/${image_label}_jlf:/out \
