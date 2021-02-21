@@ -6,3 +6,7 @@
 	path = simg
 	url = ./simg
 	datalad-id = 5618cd52-240b-4e8b-a422-b371e7542c2b
+[submodule "mimosa_models"]
+	path = mimosa_models
+	url = ./mimosa_models
+	datalad-id = 5a9d3480-fc18-4ee9-bc18-e797d6e92289
