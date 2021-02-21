@@ -1,0 +1,5 @@
+t1_n4 = neurobase::readnii("/t1_n4.nii.gz")
+bet = fslr::fslbet(t1_n4)
+neurobase::writenii(bet, "/out/t1_bet.nii.gz")
+bet = extrantsr::fslbet_robust(t1_n4, remover = "double_remove_neck", correct = TRUE, correction = "N4", recog = TRUE)
+neurobase::writenii(bet, "/out/t1_bet_robust.nii.gz")
