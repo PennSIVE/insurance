@@ -81,7 +81,8 @@ for t1 in $(find nifti/sub-$sub -name '*T1w.nii.gz'); do
          singularity run --cleanenv -B $TMPDIR -B ${stripped}:/N4_T1_strip.nii.gz:ro -B ${outdir}/${image_label}_jlf:/out \
             simg/jlf_latest.sif --out /out --type processing --atlas thalamus
         # running each array job through datalad run is a bit much... just save end results
-        datalad save -m "ran JLF" nifti/derivatives/sub-$sub
+        rm -rf ${outdir}/${image_label}_jlf/{oasis_to_t1,oasis_thalamus_to_t1}
+        datalad save -r -m "ran JLF"
     fi
 done
 
@@ -130,5 +131,6 @@ flock $DSLOCKFILE datalad push -r -d nifti/derivatives/sub-${sub} --to origin
 cd ../..
 chmod -R 777 $wrkDir
 rm -rf $wrkDir
+
 
 
